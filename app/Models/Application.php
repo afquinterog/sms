@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Application extends Model
 {
-    
+
   /**
    * Get the applications locations
    */
@@ -14,4 +14,15 @@ class Application extends Model
   {
       return $this->hasMany('App\Models\Location');
   }
+
+  /**
+   * Save or update the model information
+   *
+   * @param array $data
+   */
+  public function saveOrUpdate(array $data)
+  {
+    return $this->persist( Message::class, $data);
+  }
+  
 }

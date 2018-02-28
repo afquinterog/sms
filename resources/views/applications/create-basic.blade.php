@@ -3,11 +3,11 @@
 
   <div class="div-wrap">
 
-    <h4 class="div-title">{{ __('messages.messages_basic_information') }}</h4>
+    <h4 class="div-title">{{ __('applications.application_create') }}</h4>
 
 
       <div class="example">
-        <form action="/messages/store" method="POST" >
+        <form action="/applications/store" method="POST" >
 
           {{ method_field('POST') }}
 
@@ -17,11 +17,11 @@
           <div class="row">
 
             <div class="form-group col-xs-12 col-md-8">
-
-              @component('components.forms.form-item-select', [ 'items' => $locations ] )
-                @slot('title') Aplicaciones @endslot
-                @slot('name') location_id @endslot
-              @endcomponent
+              <label class="form-control-label" for="message">
+              			Código de la aplicación
+              </label>
+              <input type="text" class="form-control"
+			        id="code" name="code" value="{{ old('code') }}" placeholder="código" autocomplete="off">
 
             </div>
 
@@ -30,12 +30,12 @@
           <div class="row">
              <div class="form-group col-xs-12 col-md-12">
 
-              @component('components.forms.form-item-textarea')
-                @slot('title') Mensaje @endslot
-                @slot('placeholder') Mensaje a enviar @endslot
-                @slot('name') message @endslot
-                @slot('rows') 5 @endslot
-              @endcomponent
+               <label class="form-control-label" for="message">
+               			Nombre de la aplicación
+               </label>
+               <input type="text" class="form-control"
+ 			        id="name" name="name" value="{{ old('name') }}" placeholder="nombre" autocomplete="off">
+
             </div>
           </div>
 
