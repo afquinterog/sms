@@ -72,7 +72,8 @@ class MessageController extends Controller
      */
     public function edit(Message $message)
     {
-        //
+        $locations = Location::list();
+        return view('messages.edit', [ 'message' => $message, 'locations' => $locations] );
     }
 
     /**

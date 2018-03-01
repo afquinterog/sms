@@ -25,6 +25,7 @@ Route::group([ 'middleware' => 'auth'], function(){
 	//Messages routes
 	Route::get('/messages', 'MessageController@index');
 	Route::get('/messages/create', 'MessageController@create');
+	Route::get('/messages/edit/{message}', 'MessageController@edit');
 	Route::post('/messages/store', 'MessageController@store');
 
 	//Applications routes
