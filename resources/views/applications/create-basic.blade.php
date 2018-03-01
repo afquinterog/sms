@@ -15,26 +15,28 @@
 
 
           <div class="row">
+             <div class="form-group col-xs-12 col-md-8">
 
-            <div class="form-group col-xs-12 col-md-8">
-              <label class="form-control-label" for="application">
-              			Código de la aplicación
-              </label>
-              <input type="text" class="form-control"
-			        id="code" name="code" value="{{ old('code') }}" placeholder="código" autocomplete="off">
+              @component('components.forms.form-item-text')
+                @slot('title') Código de la aplicación @endslot
+                @slot('placeholder') Código @endslot
+                @slot('name') code @endslot
+                @slot('rows') 5 @endslot
+              @endcomponent
 
             </div>
-
           </div>
+
 
           <div class="row">
              <div class="form-group col-xs-12 col-md-8">
 
-               <label class="form-control-label" for="application">
-               			Nombre de la aplicación
-               </label>
-               <input type="text" class="form-control"
- 			        id="name" name="name" value="{{ old('name') }}" placeholder="nombre" autocomplete="off">
+              @component('components.forms.form-item-text')
+                @slot('title') Nombre de la aplicación @endslot
+                @slot('placeholder') Nombre @endslot
+                @slot('name') name @endslot
+                @slot('rows') 5 @endslot
+              @endcomponent
 
             </div>
           </div>
@@ -43,7 +45,7 @@
           <div class="row">
             <div class="form-group col-xs-12 col-md-4 offset-md-0">
 
-              <button type="submit" class="btn btn-primary">Guardar </button>
+              <button type="submit" class="btn btn-primary">Guardar</button>
 
             </div>
           </div>

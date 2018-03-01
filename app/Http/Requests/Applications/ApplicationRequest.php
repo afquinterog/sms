@@ -27,13 +27,9 @@ class ApplicationRequest extends FormRequest
     {
 
         return [
-            'code' => 'required|unique',          
+            'code' => ['required', Rule::unique('applications')->ignore($this->id)],
             'name' => 'required'
         ];
-
-
-
-
 
     }
 
@@ -46,7 +42,7 @@ class ApplicationRequest extends FormRequest
     {
         return [
             'code.required' => 'El campo código es requerido',
-            'name.required'  => 'El campo nombre es requerido'
+            'name.required' => 'El campo nombre es requerido'
 
         ];
     }

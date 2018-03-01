@@ -43,8 +43,8 @@
               @endcomponent
 
               @component('components.menu-item')
-                @slot('title') Aplicaciones @endslot
-                @slot('route') applications @endslot
+                @slot('title') Mensajes @endslot
+                @slot('route') messages @endslot
               @endcomponent
 
               @component('components.menu-item')
@@ -54,6 +54,18 @@
 
             @endcomponent
 
+
+            @component('components.menu-item-title')
+
+              @slot('title') Aplicaciones @endslot
+              @slot('route') javascript::void(0) @endslot
+
+              @component('components.menu-item')
+                @slot('title') Listado @endslot
+                @slot('route') applications @endslot
+              @endcomponent
+
+            @endcomponent
 
 
           </ul>

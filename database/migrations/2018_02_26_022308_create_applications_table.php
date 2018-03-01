@@ -17,6 +17,7 @@ class CreateApplicationsTable extends Migration
             $table->increments('id');
             $table->string('code',30)->unique();
             $table->string('name');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

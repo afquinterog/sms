@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Application;
 use Illuminate\Http\Request;
 use App\Http\Requests\Applications\ApplicationRequest;
-use Illuminate\Validation\Rule;
+
 
 class ApplicationController extends Controller
 {
@@ -44,10 +44,9 @@ class ApplicationController extends Controller
     public function store(ApplicationRequest $request)
     {
 
-      Application::create([
-          'code' => $request['code'],
-          'name' => $request['name']
-      ]);
+      $application = new Application;
+
+      $application->saveOrUpdate( $request->all() );
 
       $request->session()->flash('status', __('applications.saved_ok'));
 
@@ -85,7 +84,7 @@ class ApplicationController extends Controller
      */
     public function update(ApplicationRequest $request)
     {
-      //    
+      //
     }
 
     /**

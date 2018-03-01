@@ -7,35 +7,40 @@
 
 
       <div class="example">
-        <form action="/applications/update/{{$application->id}}" method="POST" >
+        <form action="/applications/store" method="POST" >
 
 
           {{ method_field('POST') }}
 
           <input type="hidden" name="_token" value="{{ csrf_token() }}">
+          <input type="hidden" name="id" value="{{ $application->id }}">
 
-
-          <div class="row">
-
-            <div class="form-group col-xs-12 col-md-8">
-              <label class="form-control-label" for="application">
-              			Código de la aplicación
-              </label>
-              <input type="text" class="form-control"
-			        id="code" name="code" value="{{ old('code', $application->code) }}" placeholder="código" autocomplete="off">
-
-            </div>
-
-          </div>
 
           <div class="row">
              <div class="form-group col-xs-12 col-md-8">
 
-               <label class="form-control-label" for="application">
-               			Nombre de la aplicación
-               </label>
-               <input type="text" class="form-control"
- 			        id="name" name="name" value="{{ old('name', $application->name) }}" placeholder="nombre" autocomplete="off">
+              @component('components.forms.form-item-text')
+                @slot('title') Código de la aplicación @endslot
+                @slot('placeholder') Código @endslot
+                @slot('name') code @endslot
+                @slot('rows') 5 @endslot
+                @slot('value') {{ $application->code }} @endslot
+              @endcomponent
+
+            </div>
+          </div>
+
+
+          <div class="row">
+             <div class="form-group col-xs-12 col-md-8">
+
+              @component('components.forms.form-item-text')
+                @slot('title') Nombre de la aplicación @endslot
+                @slot('placeholder') Nombre @endslot
+                @slot('name') name @endslot
+                @slot('rows') 5 @endslot
+                @slot('value') {{ $application->name }} @endslot
+              @endcomponent
 
             </div>
           </div>
