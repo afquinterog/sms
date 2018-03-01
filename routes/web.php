@@ -31,6 +31,8 @@ Route::group([ 'middleware' => 'auth'], function(){
 	Route::get('/applications', 'ApplicationController@index');
 	Route::get('/applications/create', 'ApplicationController@create');
 	Route::post('/applications/store', 'ApplicationController@store');
+	Route::get('/applications/edit/{application}', 'ApplicationController@edit');
+	Route::post('/applications/update/{application}', 'ApplicationController@update');
 
 
 });

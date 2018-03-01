@@ -3,9 +3,18 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\Database;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+
 
 class Application extends Model
 {
+
+	use ValidatesRequests;
+
+  use Database;
+
+  protected $fillable = ['code','name'];
 
   /**
    * Get the applications locations
@@ -15,14 +24,4 @@ class Application extends Model
       return $this->hasMany('App\Models\Location');
   }
 
-  /**
-   * Save or update the model information
-   *
-   * @param array $data
-   */
-  public function saveOrUpdate(array $data)
-  {
-    return $this->persist( Message::class, $data);
-  }
-  
 }

@@ -4,6 +4,8 @@ namespace App\Http\Requests\Applications;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+use Illuminate\Validation\Rule;
+
 class ApplicationRequest extends FormRequest
 {
     /**
@@ -23,10 +25,16 @@ class ApplicationRequest extends FormRequest
      */
     public function rules()
     {
+
         return [
-            'code' => 'required',
+            'code' => 'required|unique',          
             'name' => 'required'
         ];
+
+
+
+
+
     }
 
     /**

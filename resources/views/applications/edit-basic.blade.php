@@ -3,11 +3,12 @@
 
   <div class="div-wrap">
 
-    <h4 class="div-title">{{ __('applications.application_create') }}</h4>
+    <h4 class="div-title">{{ __('applications.application_edit') }}</h4>
 
 
       <div class="example">
-        <form action="/applications/store" method="POST" >
+        <form action="/applications/update/{{$application->id}}" method="POST" >
+
 
           {{ method_field('POST') }}
 
@@ -21,7 +22,7 @@
               			Código de la aplicación
               </label>
               <input type="text" class="form-control"
-			        id="code" name="code" value="{{ old('code') }}" placeholder="código" autocomplete="off">
+			        id="code" name="code" value="{{ old('code', $application->code) }}" placeholder="código" autocomplete="off">
 
             </div>
 
@@ -34,7 +35,7 @@
                			Nombre de la aplicación
                </label>
                <input type="text" class="form-control"
- 			        id="name" name="name" value="{{ old('name') }}" placeholder="nombre" autocomplete="off">
+ 			        id="name" name="name" value="{{ old('name', $application->name) }}" placeholder="nombre" autocomplete="off">
 
             </div>
           </div>

@@ -26,5 +26,6 @@ return [
   'application' => 'Aplicación',
   'applications_basic_information' => 'Información general',
   'application_create' => 'Crear aplicación',
+	'application_edit' => 'Editar aplicación',
 
 ];

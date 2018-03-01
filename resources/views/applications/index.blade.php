@@ -48,8 +48,6 @@
 
 	        	<td>{{ $application->name }}</td>
 	        	<td>{{ $application->created_at }}</td>
-	        
-
 
 
 	        	<td class="text-nowrap">
@@ -60,21 +58,13 @@
 								@slot('icon') wb-wrench @endslot
 							@endcomponent
 
-							{{-- @component('components.table-option')
-								@slot('title') {{ __('applications.disable') }} @endslot
-								@slot('route') {{ url('/applications/delete/' . $message->id) }} @endslot
-								@slot('icon') wb-close @endslot
-							@endcomponent 	 --}}
-
 	        	</td>
 		      </tr>
 
 	   		@endforeach
 
-
 		@endcomponent
 
-		{{-- </div> --}}
 
 		@component('components.pagination')
 			{{ $applications->appends(['filter' => old('filter')] )->links() }}
