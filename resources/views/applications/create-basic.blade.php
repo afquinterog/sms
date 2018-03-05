@@ -21,7 +21,6 @@
                 @slot('title') Código de la aplicación @endslot
                 @slot('placeholder') Código @endslot
                 @slot('name') code @endslot
-                @slot('rows') 5 @endslot
               @endcomponent
 
             </div>
@@ -34,8 +33,7 @@
               @component('components.forms.form-item-text')
                 @slot('title') Nombre de la aplicación @endslot
                 @slot('placeholder') Nombre @endslot
-                @slot('name') name @endslot
-                @slot('rows') 5 @endslot
+                @slot('name') name @endslot                
               @endcomponent
 
             </div>

@@ -23,7 +23,6 @@
                 @slot('title') Código de la aplicación @endslot
                 @slot('placeholder') Código @endslot
                 @slot('name') code @endslot
-                @slot('rows') 5 @endslot
                 @slot('value') {{ $application->code }} @endslot
               @endcomponent
 
@@ -38,7 +37,6 @@
                 @slot('title') Nombre de la aplicación @endslot
                 @slot('placeholder') Nombre @endslot
                 @slot('name') name @endslot
-                @slot('rows') 5 @endslot
                 @slot('value') {{ $application->name }} @endslot
               @endcomponent
 
