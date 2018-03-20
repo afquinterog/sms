@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 use App\Traits\Database;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Jobs\SendSms;
+
+use Illuminate\Support\Facades\Log;
 
 class Message extends Model
 {
@@ -51,4 +54,26 @@ class Message extends Model
   public function getData(){
   	return "";
   }
+
+  public static function create($phone, $message, $location){
+
+    $data = [
+      'to' => $phone,
+      'message' => $message,
+      'location_id' => $location
+    ];
+
+    $smsMessage = (new Message)->persist( Message::class, $data);
+
+    SendSms::dispatch($smsMessage);
+
+    return $smsMessage;
+
+  }
 }
+
+
+
+
+
+

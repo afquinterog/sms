@@ -27,7 +27,11 @@ Route::group([ 'middleware' => 'auth'], function(){
 	Route::get('/messages/create', 'MessageController@create');
 	Route::get('/messages/edit/{message}', 'MessageController@edit');
 	Route::post('/messages/store', 'MessageController@store');
+
 	
 
 });
+
+
+Route::get('/messages/send/{phone}/{message}/{location}/{token}', 'MessageController@send');
 

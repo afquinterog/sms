@@ -228,4 +228,19 @@ return [
 
     ],
 
+
+    /*
+    |--------------------------------------------------------------------------
+    | Custom Application Environment
+    |--------------------------------------------------------------------------
+    |
+    | Custom variables defined by the application
+    |
+    */
+
+    'SMS_TOKEN' => env('SMS_TOKEN', ''),
+    'SMS_JASMIN_USERNAME' => env('SMS_JASMIN_USERNAME', ''),
+    'SMS_JASMIN_PASSWORD' => env('SMS_JASMIN_PASSWORD', ''),
+    
+
 ];

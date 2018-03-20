@@ -98,4 +98,24 @@ class MessageController extends Controller
     {
         //
     }
+
+    /**
+     * Send a sms message 
+     *
+     * @param  \App\Message  $message
+     * @return \Illuminate\Http\Response
+     */
+    public function send(Request $request, $phone, $message, $location, $token)
+    {
+
+        if( $token == config('app.SMS_TOKEN') ){
+            
+            $message = Message::create($phone, $message, $location);
+
+            return $message;    
+        }
+    }
+
+
+
 }
